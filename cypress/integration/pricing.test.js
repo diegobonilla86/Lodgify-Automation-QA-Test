@@ -7,7 +7,7 @@ beforeEach(() => {
   cy.waitUntil (function() {
     return cy.get(pricing.getScrollBox(), {timeout: 5000}).should('be.visible');
   });
-})
+});
 
 describe('Verify the yearly plan selecting 50 rentals', () => {
     it('Should display', () => {
@@ -17,7 +17,7 @@ describe('Verify the yearly plan selecting 50 rentals', () => {
       cy.get(pricing.getProfessionalPlanCurrency()).contains('$');
       cy.get(pricing.getProfessionalPlanValue()).contains('375');
       cy.get(pricing.getUltimatePlanCurrency()).contains('$');
-      cy.get(pricing.getUltimatePlanValue()).contains('525'); //This will fail = 318
+      cy.get(pricing.getUltimatePlanValue()).contains('525'); //This will fail = 318 ::: First BUG
     });
 });
 
